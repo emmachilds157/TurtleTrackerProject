@@ -22,7 +22,10 @@ line_list = file_object.readlines()
 file_object.close()
 
 #Pretend we read one line of data from the file
-for lineString in line_list:
+for lineString in line_list: #Can add [17:] to line_list to get the code to start running at line 18.
+    #Check if line is a data line
+    if lineString[0] in ("#", "u"):
+        continue    #don't need an "else" here
 
     #Split the string into a list of data items
     lineData = lineString.split()
