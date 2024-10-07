@@ -9,6 +9,9 @@
 # Date:   Fall 2024
 #--------------------------------------------------------------
 
+#Ask user for "a date"
+user_date = '7/3/2003' #input("Enter a date: ")
+
 #Create a variable pointing to the data file
 file_name = './Data/Raw_Data/sara.txt'
 
@@ -47,5 +50,11 @@ for lineString in line_list: #Can add [17:] to line_list to get the code to star
         date_dict[record_id] = obs_date
         location_dict[record_id] = (obs_lat, obs_lon)
 
-    #Print the location of sara
-    #print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {obs_date}") #Highlighted this whole section and hit tab to move it over after line 25
+    #Initialize key list
+    keys = []
+
+    #Loop through items in date_dict
+    for item in date_dict.items():
+        key = item[0]
+        value = item [1]
+        if value == user_date: print(key)
